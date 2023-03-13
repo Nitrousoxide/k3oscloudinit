@@ -1,0 +1,25 @@
+ssh_authorized_keys:
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDVxn8wrynWqfMV3a5+BYsvN+LjS5SzQEfgUcRAhgLv/Zn63zpAI1lIkK+g8UXKzCGPkwV2gbcGqhrwHs08/6q9aP4tZyJEWUMfyivbkQE6SkyL4h5nfP9iV8qSVqVODOoJS4BFuvb4KX5IJ98a+RKQ0nf1cpxyRUwR6GwBFE2wyviY+11P68GO8Vnf/4rFlwfgwUjOS6yMFUQCCim8IRixQ9S+nfzQvzX3ku/eP7N4mTyUpgcNtpQnQ6IPdbxcR7V/f8vjlCVbBclmP3zDS+ErGU3wArQ57MF1LfkdPWByV+LJBBgkX/hcLiPzd74U4kUTdsOFSxAQnEaoQVF6HlJJksFAKMcAvUMnm0OCqKafLc1sHnzRnierfmV8lchAE9rzmyNJYmu2Qe/IaV61fgdePsMej4QOT9QDWeILLBpgyuv425n2ieakG/7PspPE7L7f+dhK6zVEBv2YrBg4SBLCtU0hDWonvP/x8AIAg2gErSaND9e1qJRT18Az7CKoJf0= nitro@MacBook-Air.local
+- ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC2cXuGAL+3PYdUHqvysB8W6ityW8k3mcrpGL7/5/v8icr6EJbStAi9hNVnSQh/HHYxlw7IY2FXahtbEUof+jtql+Bh02Cs1PLoEDf/K7kD5KDN3NaGAxPyJ3XJlk7urg1+0kYErlpdzK+JSRkvYC+GmQ0jsi2dhVWx8KtUfPZflWvOChq8sd9bfaGhOzWPWzlaRDglitwcewY/x5ruoN+Cheok8FmQzUPvv+3HNWXhFvKD22Tqw/xa6/X1/5IRXQjgSQwrcHDefObX9a2cOkSC/1hqOfgutvC1q2bPg82tbxzDor6GD/UvXkG5JhVxUfsvlxSxmXxvrFrlvrYLMoPYOT0MhSWcmEqd2iUGapeFg1HOxWTpJ7NlRZfufSGvJrngJgX1TqS/F6goCBTTdepiOWNgofRmTTaxgiOCheX9bY+B6pjcDEGw6u6ONSV9rriVluA+88v44oJvJ9QZ4SjcxgJNJ2L5wVyMcUhWlQsrKkRXydngtOFK8ndNMEcBDDHWfAR9dowEoUJ5EI8F/R/eLNGx6Clhy7XNcS6l713Ehc9cPfYxG7nUX8vDGgqdflzHSWsw9ttrkzHshUe8WqyU+uCcGs6FfWAgFAQIkl766eO1iC9bQ+6TcY8Ct3fAEucTTJQblRlZOa6AbAoZ8KFuUGEB/0FxoOxf7nhLFQ0tOQ== nitro2985@gmail.com
+hostname: k8s-node-1
+
+k3os:
+  data_sources:
+  - cdrom
+  modules:
+  - kvm
+  - nfs
+  dns_nameservers:
+  - 8.8.8.8
+  - 1.1.1.1
+  ntp_servers:
+  - 0.us.pool.ntp.org
+  - 1.us.pool.ntp.org
+  password: 6yjP87@HDC*qL
+  k3s_args:
+  - server
+  - "--cluster-init"
+  - "--disable"
+  - "traefik"
+  - "--disable"
+  - "servicelb"
